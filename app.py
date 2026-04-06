@@ -45,9 +45,4 @@ def index():
             result = f_to_c(value)
     return render_template("index.html", result=result)
 
-app.run(host="0.0.0.0", port=5000, debug=True)
-
-
-
-
-
+app.run(host="0.0.0.0", port=5000, debug=True)           
