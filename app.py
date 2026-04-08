@@ -1,4 +1,5 @@
 print(">>> THIS IS THE CORRECT APP.PY <<<")
+import os
 from flask import Flask, render_template, request, send_from_directory
 from conversions import (
     mm_to_cm, cm_to_mm, cm_to_m, m_to_cm,
@@ -8,7 +9,7 @@ from conversions import (
 )
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
 
 @app.route('/service-worker.js')
 def service_worker():
