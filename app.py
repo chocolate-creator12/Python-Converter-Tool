@@ -8,8 +8,12 @@ from conversions import (
     c_to_f, f_to_c
 )
 
+# Get the base directory where this app.py file is located
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
+app = Flask(__name__, 
+            template_folder=os.path.join(BASE_DIR, 'templates'),
+            static_folder=os.path.join(BASE_DIR, 'static'))
 
 @app.route('/service-worker.js')
 def service_worker():
